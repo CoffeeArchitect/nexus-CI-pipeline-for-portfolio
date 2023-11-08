@@ -11,7 +11,7 @@ def pushImage(){
 
     withCredentials([usernamePassword(credentialsId: 'nexus', passwordVariable: 'PSW', usernameVariable: 'USER')]){
         sh "echo ${PSW} | docker login -u ${USER} --password-stdin 64.227.128.95:8082"
-        sh "docker push 64.227.128.95:8082/sanskriti-portfolio:${BUILD_NUMBER}"
+        sh "docker push localhost:8083/sanskriti-portfolio:${BUILD_NUMBER}"
     }
 }
 
